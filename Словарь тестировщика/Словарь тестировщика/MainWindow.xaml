@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Словарь_тестировщика"
         mc:Ignorable="d"
-        Title="Словарь тестировщика" Height="900" Width="1000">
+        Title="Словарь тестировщика" Height="800" Width="1000" Icon="/search (2).png" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Cursor="Pen" AutomationProperties.IsRequiredForForm="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalContentAlignment="Stretch">
     <Grid RenderTransformOrigin="0.524,0.594">
-        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="800" VerticalAlignment="Center" Width="1000"/>
-        
+        <Frame x:Name="frame" Content="" HorizontalAlignment="Center" Height="760" VerticalAlignment="Center" Width="1000"/>
+
     </Grid>
 </Window>

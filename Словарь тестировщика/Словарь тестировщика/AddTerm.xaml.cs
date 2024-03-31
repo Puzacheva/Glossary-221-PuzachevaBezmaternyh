@@ -19,7 +19,7 @@ namespace Словарь_тестировщика
 
     public partial class AddTerm : Page
     {
-        
+
         private Термины _currentTerm = new Термины();
 
         public AddTerm()

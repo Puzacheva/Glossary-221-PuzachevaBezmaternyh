@@ -4,11 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Словарь_тестировщика"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddTerm">
+      mc:Ignorable="d"
+      Title="AddTerm" Foreground="White" Width="1000" Height="795.6">
 
-    <Grid Background="White">
+    <Grid Height="800">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -19,14 +21,14 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Center" Height="36" Margin="0,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" TextAlignment="Center" FontSize="18"><Run Language="ru-ru" Text="Понятие"/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" Height="36" Margin="0,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="1" TextAlignment="Center" FontSize="18"><Run Language="ru-ru" Text="Определение"/></TextBlock>
-        <TextBlock Height="36" Margin="68,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Left" FontSize="18"><Run Language="ru-ru" Text="Источник"/></TextBlock>
-        <TextBox Text="{Binding Понятие}"  HorizontalAlignment="Center" Height="113" Margin="0,140,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" ToolTip="Введите термин"/>
-        <TextBox Text="{Binding Определение}" HorizontalAlignment="Center" Height="113" Margin="0,140,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="1" ToolTip="Введите определение термина"/>
-        <TextBox Text="{Binding Источник}" HorizontalAlignment="Left" Height="113" Margin="68,140,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="2" TextChanged="TextBox_TextChanged" ToolTip="Укажите источник (ссылка/учебник/Ф.И.О. автора понятия)"/>
+        <TextBlock HorizontalAlignment="Center" Height="36" Margin="0,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" TextAlignment="Center" FontSize="18"><Run Language="ru-ru" Text="Понятие"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="36" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="1" TextAlignment="Center" FontSize="18"><Run Language="ru-ru" Text="Определение"/></TextBlock>
+        <TextBlock Height="36" Margin="68,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Left" FontSize="18"><Run Language="ru-ru" Text="Источник"/></TextBlock>
+        <TextBox Text="{Binding Понятие}"  HorizontalAlignment="Left" Height="113" Margin="56,45,0,0" Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" ToolTip="Введите термин"/>
+        <TextBox Text="{Binding Определение}" HorizontalAlignment="Center" Height="113" Margin="0,45,0,0" Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="1" ToolTip="Введите определение термина"/>
+        <TextBox Text="{Binding Источник}" HorizontalAlignment="Left" Height="113" Margin="48,82,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="2" TextChanged="TextBox_TextChanged" ToolTip="Укажите источник (ссылка/учебник/Ф.И.О. автора понятия)"/>
         <Button x:Name="ButtonSave" Content="Сохранить" Click="ButtonSave_Click" HorizontalAlignment="Left" Height="33" Margin="48,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="154" ToolTip="Нажмите, чтобы сохранить новый термин"/>
-        <Button x:Name="ButtonCancel" Content="Отмена" Click="ButtonCancel_Click" HorizontalAlignment="Left" Height="33" Margin="64,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="154" Grid.Column="1" ToolTip="Возвращение на страницу словаря"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" Click="ButtonCancel_Click" HorizontalAlignment="Left" Height="33" Margin="64,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="154" Grid.Column="1" ToolTip="Возвращение на страницу словаря" IsCancel="True" IsDefault="True"/>
 
 
     </Grid>

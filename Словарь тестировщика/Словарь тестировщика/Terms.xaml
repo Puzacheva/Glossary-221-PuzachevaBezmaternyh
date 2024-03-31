@@ -9,14 +9,23 @@
       Title="Terms">
 
     <Grid Margin="0,0,0,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="/фон2.jpg" Stretch="UniformToFill" Opacity="0.45"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="600"/>
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="0" Name ="DataGridTerm" IsReadOnly="True" Height="600" Width="1000"  SelectionChanged="DataGrid_SelectionChanged" ClipToBounds="True" HorizontalAlignment="Center" VerticalAlignment="Top" AutoGenerateColumns="False" Grid.RowSpan="2">
+        <DataGrid Grid.Row="0" Name ="DataGridTerm" IsReadOnly="True" Height="600" Width="1000"  SelectionChanged="DataGrid_SelectionChanged" ClipToBounds="True" HorizontalAlignment="Center" VerticalAlignment="Top" AutoGenerateColumns="False" Grid.RowSpan="2" Background="White" FontFamily="{Binding HeaderStyle, ElementName=dataGridTextColumn}" FontSize="14" AreRowDetailsFrozen="True">
+            <DataGrid.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF818181" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.BorderBrush>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Понятие"
+                <DataGridTextColumn x:Name="dataGridTextColumn" Header="Понятие"
                             Binding="{Binding Понятие}" Width="*" />
                 <DataGridTextColumn Header="Определение"
                             Binding="{Binding Определение}" Width="*"/>
@@ -25,8 +34,38 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Name ="ButtonAdd" Content="Добавить" Click="ButtonAdd_Click" HorizontalAlignment="Left" Height="49" Margin="39,51,0,0" Grid.Row="1" VerticalAlignment="Top" Width="180" ToolTip="Нажмите, чтобы добавить новый термин в словарь"/>
-        <Button Name ="ButtonDel" Content="Удалить" HorizontalAlignment="Right" Height="49" Margin="0,51,39,0" Grid.Row="1" VerticalAlignment="Top" Width="180" ToolTip="Нажмите, чтобы удалить все выделенные записи" Tag=""/>
+        <Button Name ="ButtonAdd" Content="ДОБАВИТЬ" Click="ButtonAdd_Click" Height="73" Margin="53,25,0,0" Grid.Row="1" VerticalAlignment="Top" Width="215" ToolTip="Нажмите, чтобы добавить новый термин в словарь" HorizontalAlignment="Left" FontFamily="Algerian" FontSize="20" RenderTransformOrigin="0.5,0.5" FontWeight="Regular">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.1" ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button Name ="ButtonDel" Content="УДАЛИТЬ" HorizontalAlignment="Right" Height="73" Margin="0,25,53,0" Grid.Row="1" VerticalAlignment="Top" Width="222" ToolTip="Нажмите, чтобы удалить все выделенные записи" Tag="" FontFamily="Algerian" FontSize="20" BorderThickness="0.8,0.8,0.8,0.8" ClipToBounds="True" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.1" ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.BorderBrush>
+                <ImageBrush/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>
