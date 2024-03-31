@@ -1,0 +1,13 @@
+﻿<Window x:Class="Словарь_тестировщика.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Словарь_тестировщика"
+        mc:Ignorable="d"
+        Title="Словарь тестировщика" Height="900" Width="1000">
+    <Grid RenderTransformOrigin="0.524,0.594">
+        <Frame x:Name="frame" Content="" HorizontalAlignment="Left" Height="800" VerticalAlignment="Center" Width="1000"/>
+        
+    </Grid>
+</Window>
