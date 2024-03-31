@@ -9,7 +9,7 @@
 
     <Grid Height="800">
         <Grid.Background>
-            <ImageBrush/>
+            <ImageBrush ImageSource="/фон1.jpg" Opacity="0.8"/>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -21,14 +21,17 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Center" Height="36" Margin="0,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" TextAlignment="Center" FontSize="18"><Run Language="ru-ru" Text="Понятие"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="36" Margin="72,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="1" TextAlignment="Center" FontSize="18"><Run Language="ru-ru" Text="Определение"/></TextBlock>
-        <TextBlock Height="36" Margin="68,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Left" FontSize="18"><Run Language="ru-ru" Text="Источник"/></TextBlock>
-        <TextBox Text="{Binding Понятие}"  HorizontalAlignment="Left" Height="113" Margin="56,45,0,0" Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" ToolTip="Введите термин"/>
-        <TextBox Text="{Binding Определение}" HorizontalAlignment="Center" Height="113" Margin="0,45,0,0" Grid.RowSpan="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="1" ToolTip="Введите определение термина"/>
-        <TextBox Text="{Binding Источник}" HorizontalAlignment="Left" Height="113" Margin="48,82,0,0" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Grid.Column="2" TextChanged="TextBox_TextChanged" ToolTip="Укажите источник (ссылка/учебник/Ф.И.О. автора понятия)"/>
-        <Button x:Name="ButtonSave" Content="Сохранить" Click="ButtonSave_Click" HorizontalAlignment="Left" Height="33" Margin="48,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="154" ToolTip="Нажмите, чтобы сохранить новый термин"/>
-        <Button x:Name="ButtonCancel" Content="Отмена" Click="ButtonCancel_Click" HorizontalAlignment="Left" Height="33" Margin="64,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="154" Grid.Column="1" ToolTip="Возвращение на страницу словаря" IsCancel="True" IsDefault="True"/>
+        <TextBlock HorizontalAlignment="Center" Height="40" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192" TextAlignment="Center" FontSize="30" FontFamily="Algerian">
+            <TextBlock.Background>
+                <ImageBrush/>
+            </TextBlock.Background><Run Language="ru-ru" Text="Понятие"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Height="36" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" Grid.Column="1" TextAlignment="Center" FontSize="30" FontFamily="Algerian"><Run Language="ru-ru" Text="Определение"/></TextBlock>
+        <TextBlock Margin="0,215,0,10" TextWrapping="Wrap" Width="138" Grid.Column="2" TextAlignment="Center" HorizontalAlignment="Center" FontSize="30" FontFamily="Algerian"><Run Language="ru-ru" Text="Источник"/></TextBlock>
+        <TextBox  HorizontalAlignment="Center" Height="166" Margin="0,266,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" ToolTip="Введите термин" FontFamily="Arial" FontSize="16" Grid.RowSpan="2" Opacity="0.7" UndoLimit="200" SelectionOpacity="0"/>
+        <TextBox HorizontalAlignment="Center" Height="166" TextWrapping="Wrap" VerticalAlignment="Top" Width="313" Grid.Column="1" ToolTip="Введите определение термина" FontFamily="Arial" FontSize="16" Grid.Row="1" Opacity="0.7" UndoLimit="200"/>
+        <TextBox HorizontalAlignment="Center" Height="166" Margin="0,266,0,0" VerticalAlignment="Top" Width="313" Grid.Column="2" TextChanged="TextBox_TextChanged" ToolTip="Укажите источник (ссылка/учебник/Ф.И.О. автора понятия)" FontFamily="Arial" FontSize="16" Grid.RowSpan="2" Opacity="0.7" UndoLimit="200" TextWrapping="Wrap"/>
+        <Button x:Name="ButtonSave" Content="Сохранить" Click="ButtonSave_Click" HorizontalAlignment="Left" Height="50" Margin="234,209,0,0" Grid.Row="1" VerticalAlignment="Top" Width="173" ToolTip="Нажмите, чтобы сохранить новый термин" FontFamily="Algerian" FontSize="22" Grid.ColumnSpan="2"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" Click="ButtonCancel_Click" HorizontalAlignment="Left" Height="50" Margin="234,209,0,0" Grid.Row="1" VerticalAlignment="Top" Width="173" Grid.Column="1" ToolTip="Возвращение на страницу словаря" IsCancel="True" IsDefault="True" FontFamily="Algerian" FontSize="22" Grid.ColumnSpan="2"/>
 
 
     </Grid>

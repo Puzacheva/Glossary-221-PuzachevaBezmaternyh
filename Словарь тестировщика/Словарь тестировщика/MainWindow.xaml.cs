@@ -21,7 +21,7 @@ namespace Словарь_тестировщика
     {
         protected override void OnClosing(CancelEventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите выйти из приложения?", "ВЫХОД", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
+            if (MessageBox.Show("Вы действительно хотите выйти из приложения?", "Предупреждение", MessageBoxButton.OKCancel, MessageBoxImage.Question) == MessageBoxResult.Cancel)
             {
                 e.Cancel = true;
             }
