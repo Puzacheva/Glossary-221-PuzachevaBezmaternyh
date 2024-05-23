@@ -22,6 +22,9 @@ namespace Словарь_тестировщика
 
         private Термины _currentTerm = new Термины();
 
+        /// <summary>
+        /// Метод инициализирует элементы управления и связывает данные с текущим объектом термина.
+        /// </summary>
         public AddTerm()
         {
             InitializeComponent();
@@ -29,11 +32,16 @@ namespace Словарь_тестировщика
 
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Этот метод вызывается при нажатии кнопки Сохранить.
+        /// Проверяет на заполненность все поля, если какое-то не заполнено, 
+        /// показывает соответствующее сообщение.
+        /// Если все поля заполнены и запись новая, добавляет ее в базу данных.
+        /// В случае успешного сохранения возвращает на предыдущую страницу,
+        /// в случае ошибки отображает соответствующее сообщение.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSave_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
@@ -64,6 +72,12 @@ namespace Словарь_тестировщика
             }
         }
 
+        /// <summary>
+        /// Этот метод вызывается при нажатии кнопки Отмена
+        /// Возвращает на прошлую страницу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();

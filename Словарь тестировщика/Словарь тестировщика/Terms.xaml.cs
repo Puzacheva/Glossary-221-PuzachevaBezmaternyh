@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace Словарь_тестировщика
 {
@@ -19,23 +20,44 @@ namespace Словарь_тестировщика
     
     public partial class Terms : Page
     {
+        /// <summary>
+        /// Этот метод является конструктором класса Terms;
+        /// Инициализирует компоненты пользовательского интерфейса и
+        /// загружает данные из таблицы Термины в элемент управления DataGrid для отображения.
+        /// </summary>
         public Terms()
         {
             InitializeComponent();
             DataGridTerm.ItemsSource = Entities.GetContext().Термины.ToList();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Метод вызывается при нажатии кнопки Добавить
+        /// Открывает страницу добавления нового термина
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("AddTerm.xaml", UriKind.Relative));
         }
 
-        //Обновление таблицы с данными о пользователях при каждой перезагрузке страницы
+        /// <summary>
+        /// Метод вызывается при нажатии кнопки Справочная_система
+        /// Открывает приложение справочной системы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Справочная_система_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("\"C:\\Users\\79260\\OneDrive\\Рабочий стол\\ПиТ\\ПР12\\help.chm\"");
+        }
+
+        /// <summary>
+        /// Метод обновляет таблицы с данными о пользователях при каждой перезагрузке страницы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             if (Visibility == Visibility.Visible)
